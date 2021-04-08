@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>Welcome To Login Form</title>
+  <style type="text/css">
+    body
+   {
+     margin:0px;
+      background-color:#ced1c8; 
+     color:#130f10; font-family:Arial, Helvetica, sans-serif;
+   }
+   #main
+   {
+     width:500px; height:100vh; margin-left:0px; border-radius:10px; padding-left:10px; margin-top:auto;
+     background-color: darkkhaki;
+     background-image: url("https://i.pinimg.com/originals/2f/03/8c/2f038c01a4964392f6069a9cc0ef6973.jpg");
+     border-top:3px double #3a30bd; border-bottom:3px double #3a30bd; border-left:3px double #3a30bd; border-right:3px   double #3a30bd; padding-top:20px;
+     
+   }
+   #main table
+   {
+     font-family:"Comic Sans MS";
+   } 
+  /* css code for textbox */
+  #main .tb
+  {
+    height:35px; width:230px; border:1px solid #a42751; color:#0a0a0a; font-weight:bold; border-left:5px solid #a42751; opacity:0.9;
+  }
+
+   /* css code for button*/
+   #main .btn
+   {
+    width:80px; height:35px; outline:none;  font-weight:bold; border:1px solid #27a465; text-shadow: 0px 0.5px 0.5px #fff;	
+    border-radius: 2px; font-weight: 600; color: #27a465; letter-spacing: 1px; font-size:14px; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;
+   }
+  
+   #main .btn:hover
+   {
+    background-color:#123b1c; outline:none;  border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
+   }
+   #main .loginByEmail
+   {
+    width:390px; height:70px; outline:none;  font-weight:bold; border:1px solid #040546; text-shadow: 0px 0.5px 0.5px #fff;	margin-left: auto; margin-right: auto;
+    border-radius: 2px; font-weight: 600; color: #0b175a; letter-spacing: 1px; font-size:14px; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s; 
+    background-image: url("https://i.pinimg.com/originals/2f/03/8c/2f038c01a4964392f6069a9cc0ef6973.jpg");
+   }
+   #main .loginByEmail:hover
+   {
+    background-color:#070529; outline:none;  border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
+   }
+  </style>
+  <script>
+    
+    //Log in function
+    function login()
+	{
+		var uname = document.getElementById("email").value;
+		var pwd = document.getElementById("password").value;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if(uname =='')
+		{
+			alert("please enter user name.");
+		}
+		else if(pwd=='')
+		{
+        	alert("enter the password");
+		}
+		else if(!filter.test(uname))
+		{
+			alert("Enter valid email id.");
+		}
+		else if(pwd.length < 6 || pwd.length > 6)
+		{
+			alert("Password min and max length is 6.");
+		}
+		else
+		{
+	alert('Thank You for Login & You are Redirecting to Campuslife Website');
+  //Redirecting to other page or webste code or you can set your own html page.
+       window.location = "https://www.campuslife.co.in";
+			}
+	}
+	//Reset Inputfield code.
+	function clearFunc()
+	{
+		document.getElementById("email").value="";
+		document.getElementById("password").value="";
+	}	
+  function loginFacebook()
+  {
+    window.location="https://www.facebook.com";
+  }
+  
+  function loginEmail(){
+    window.location="https://mail.google.com";
+  }
+    </script>
+
+  </head>
+
+	<body>
+	<!-- Main div code -->
+	<div id="main">
+	<div class="h-tag">
+	<center><h2>Login your account</h2></center>
+	</div>
+	<!-- Login box -->
+	<div class="login" >
+	<table cellspacing="2" align="padding-left" cellpadding="8" border="0">
+	<tr>
+	<td>Username :</td>
+	<td><input type="text" placeholder="Enter user name here" id="email" class="tb" /></td>
+	</tr>
+	<tr>
+	<td>Password :</td>
+	<td><input type="password" placeholder="Enter Password here" id="password" class="tb" /></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td>
+	<input type="submit" value="Reset" onclick="clearFunc()" class="btn" />
+	<input type="submit" value="Login" class="btn" onClick="login()" /></td>
+	</tr>
+	</table>
+  <br><br>
+  <!-- <div class="facebook"> -->
+    <!-- <label>Log in with</label> -->
+  <!-- <input type="submit" value="Log in with Facebook" onclick="loginFacebook()" class="loginByEmail"  /> -->
+  <!-- <br><br> -->
+  <!-- </div> -->
+  <!-- <div class="gmail"> -->
+    <!-- <label>Log in with</label> -->
+  <!-- <input type="submit" value="Log in with Gmail" onclick="loginEmail()" class="loginByEmail"  /> -->
+  <!-- <br><br> -->
+  <!-- </div> -->
+
+	</div>
+  	 <!-- login box div ending here.. -->
+	</div>
+	<!-- Main div ending here... -->
+    
+  </body>
+  </html>
